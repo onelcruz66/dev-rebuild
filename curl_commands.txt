@@ -1,0 +1,11 @@
+Test /health 
+curl http://localhost:5000/health
+
+Test creating a task via /task POST
+curl -X POST http://localhost:5000/tasks \
+  -H "Content-Type: application/json" \
+  -d '{"title": "my first task"}'
+
+Test getting all tasks via /task GET
+curl http://localhost:5000/tasks
+
