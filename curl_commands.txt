@@ -9,3 +9,10 @@ curl -X POST http://localhost:5000/tasks \
 Test getting all tasks via /task GET
 curl http://localhost:5000/tasks
 
+Test updating a task via /task PUT
+curl -X PUT http://localhost:5000/tasks/1 \
+  -H "Content-Type: application/json" \
+  -d '{"completed": true}'
+
+  Test deleting a task via /task DELETE
+  curl -X DELETE http://localhost:5000/tasks/2
