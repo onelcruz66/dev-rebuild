@@ -47,7 +47,7 @@ def server_error(error):
 @app.route('/health', methods=['GET'])
 def health():
     return jsonify({
-        "status": "healhty",
+        "status": "healthy",
         "environment": os.getenv('FLASK_ENV', 'production')
     })
 @app.route('/tasks', methods=['GET'])

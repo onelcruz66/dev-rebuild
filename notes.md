@@ -10,4 +10,9 @@
 6. SQLite is a file based database. It creates a file called tasks.db in project folder. No separate database server needed. In production you'd just swap this for postgres or mysql (e.g. 'postgresql://username:password@localhost/dbname')
 7. db = SQLAlchemy(app) creates a database connection tied to your Flask app.
 8. REST means Representational State Transfer and its a convention for designing APIs where HTTP methods map to database operations.
-9. 
+
+## Flask Testing Using Pytest
+1. @pytest.fixture decorator for the functions *client* and *sample_task* are reusable test functions. Instead of repeating database setup for every test, we define it once and use it on each test.
+2. Every test gets a fresh database via the fixture so tests never affect each other. 
+3. Tests are grouped into classes to keep things organized. 
+4. We are making different assertions about what the response should contain. Success and failure modes are tested to catch subtle bugs normal status codes would not reveal.
